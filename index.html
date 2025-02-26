@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini calendar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="hero">
+      <div class="cal">
+        <div class="left">
+          <p id="date">01</p>
+          <p id="day">sunday</p>
+        </div>
+        <div class="right">
+          <p id="month">january</p>
+          <p id="year">2020</p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const date = document.getElementById("date");
+      const day = document.getElementById("day");
+      const month = document.getElementById("month");
+      const year = document.getElementById("year");
+      const today = new Date();
+      const weekdays = [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+      ];
+      const allmonth = [
+        "jan",
+        "feb",
+        "march",
+        "apr",
+        "may",
+        "june",
+        "july",
+        "aug",
+        "sept",
+        "oct",
+        "nov",
+        "dec",
+      ];
+
+      date.innerHTML = (today.getDate() < 10 ? "0" : "") + today.getDate();
+      //   date.innerHTML = today.getDate();
+      day.innerHTML = weekdays[today.getDay()];
+      month.innerHTML = allmonth[today.getMonth()];
+      year.innerHTML = today.getFullYear();
+    </script>
+  </body>
+</html>
